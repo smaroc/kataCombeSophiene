@@ -6,8 +6,10 @@ namespace kataCombeSophiene
 {
     public class CoffeeMachine
     {
+        private DrinkMaker drinkMaker;
         public CoffeeMachine()
         {
+            drinkMaker = new DrinkMaker();
         }
 
         internal void TranslateCommand(string command)
@@ -48,7 +50,7 @@ namespace kataCombeSophiene
 
         public void sendCommandToDrinkMaker(DrinkCommand drinkCommand)
         {
-            Console.WriteLine(drinkCommand.ToString());
+            drinkMaker.MakeDrinkCommand(drinkCommand);
         }
 
 
