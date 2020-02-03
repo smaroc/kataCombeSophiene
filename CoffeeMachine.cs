@@ -4,7 +4,7 @@ using System.Text;
 
 namespace kataCombeSophiene
 {
-    public class CoffeeMachine
+    public class CoffeeMachine : EmailNotifier, BeverageQuantityChecker
     {
         private DrinkMaker drinkMaker;
         private List<DrinkCommand> listDrinkCommandHistory;
@@ -13,11 +13,13 @@ namespace kataCombeSophiene
             drinkMaker = new DrinkMaker();
         }
 
+        internal void ShowMessage(string msg)
+        {
+            Console.WriteLine($"M:{msg}");
+        }
+
         internal void TranslateCommand(InputCustomerCommand command)
         {
-
-
-
             var drinkCommand = AnalyzeCommand(command);
             SaveHistory(drinkCommand);
             sendCommandToDrinkMaker(drinkCommand);
@@ -33,11 +35,8 @@ namespace kataCombeSophiene
 
         private static DrinkCommand AnalyzeCommand(InputCustomerCommand inputCustomer)
         {
-
             var sticks = inputCustomer.NbSugars != 0 ? "0" : "";
-
             return new DrinkCommand(inputCustomer);
-
         }
 
         internal void PrintHistory()
@@ -48,7 +47,6 @@ namespace kataCombeSophiene
                 Console.WriteLine($"{command.Type} Price : {command.Price} Sugar(s) {command.NbSugars} ExtraHot : {command.ExtraHot}");
                 totalAmount += command.Price;
             }
-
             Console.WriteLine($"Total Money : {totalAmount}");
         }
 
@@ -57,8 +55,15 @@ namespace kataCombeSophiene
             drinkMaker.MakeDrinkCommand(drinkCommand);
         }
 
-        
+        public void notifyMissingDrink(DrinkCommand drink)
+        {
+            Console.WriteLine($"Drink : {drink.Type} is shortage !, We notify the maintenance service.");
+        }
 
-
+        public bool isEmpty(DrinkCommand drink)
+        {
+            var res = drink.Quantity == 0 ? true : false;
+            return res;
+        }
     }
 }

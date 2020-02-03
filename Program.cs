@@ -9,17 +9,30 @@ namespace kataCombeSophiene
         {
             CoffeeMachine coffeeMachine = new CoffeeMachine();
             MoneyChecker moneyChecker = new MoneyChecker();
+
+            coffeeMachine.ShowMessage("No more water");
+
             List<InputCustomerCommand> inputCustomerCommands = new List<InputCustomerCommand>{
+
                 new InputCustomerCommand(DrinkType.Tea, 2, 0.6, true),
-            new InputCustomerCommand(DrinkType.OrangeJuice, 2, 0.6, false),
-            new InputCustomerCommand(DrinkType.Chocolate, 2, 0.6, true)};
+                new InputCustomerCommand(DrinkType.OrangeJuice, 2, 0.6, false),
+                new InputCustomerCommand(DrinkType.Chocolate, 2, 0.6, true)
+            };
 
             foreach (var inputCustomerCommand in inputCustomerCommands)
             {
-                if (moneyChecker.CheckInputCoin(inputCustomerCommand) < 0)
-                    moneyChecker.ShowMissingMoney(inputCustomerCommand);
+                if (coffeeMachine.isEmpty(inputCustomerCommand))
+                {
+                    coffeeMachine.notifyMissingDrink(inputCustomerCommand);
+                }
                 else
-                    coffeeMachine.TranslateCommand(inputCustomerCommand);
+                {
+
+                    if (moneyChecker.CheckInputCoin(inputCustomerCommand) < 0)
+                        moneyChecker.ShowMissingMoney(inputCustomerCommand);
+                    else
+                        coffeeMachine.TranslateCommand(inputCustomerCommand);
+                }
 
             }
 

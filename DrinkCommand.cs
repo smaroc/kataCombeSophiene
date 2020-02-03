@@ -14,12 +14,14 @@ namespace kataCombeSophiene
         public double Price { get; set; }
         public bool ExtraHot { get; set; }
 
+        public int Quantity { get; set; }
+
         public DrinkCommand()
         {
 
         }
 
-        public DrinkCommand(InputCustomerCommand inputCustomerCommand)
+        public DrinkCommand(InputCustomerCommand inputCustomerCommand) : base()
         {
             this.Type = inputCustomerCommand.Type;
             this.NbSugars = inputCustomerCommand.NbSugars;

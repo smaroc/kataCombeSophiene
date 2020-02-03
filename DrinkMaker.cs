@@ -13,6 +13,7 @@ namespace kataCombeSophiene
 
         public void MakeDrinkCommand(DrinkCommand drinkCommand)
         {
+            drinkCommand.Quantity--;
             Console.WriteLine(drinkCommand.ToString());
 
         }

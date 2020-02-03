@@ -16,25 +16,34 @@ namespace kataCombeSophiene
 
             this.InputCoin = input;
 
+
             switch (type)
             {
                 case DrinkType.Tea:
                     base.Price = 0.4;
+                    base.Quantity = 0;
                     break;
 
                 case DrinkType.Coffee:
                     base.Price = 0.6;
+                    base.Quantity = 2;
                     break;
 
                 case DrinkType.Chocolate:
                     base.Price = 0.5;
+                    base.Quantity = 2;
+
                     break;
                 case DrinkType.OrangeJuice:
                     base.Price = 0.6;
+                    base.Quantity = 2;
+
                     break;
                 default:
                     break;
             }
+
+
 
         }
     }
