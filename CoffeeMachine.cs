@@ -20,6 +20,7 @@ namespace kataCombeSophiene
 
         }
 
+
         private static DrinkCommand AnalyzeCommand(InputCustomerCommand inputCustomer)
         {
 
@@ -28,6 +29,7 @@ namespace kataCombeSophiene
             return new DrinkCommand(inputCustomer.Type, inputCustomer.NbSugars, sticks);
 
         }
+
 
         public void sendCommandToDrinkMaker(DrinkCommand drinkCommand)
         {

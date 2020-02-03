@@ -11,6 +11,7 @@ namespace kataCombeSophiene
         public int NbSugars { get; set; }
 
         public string IsStick { get; }
+        public double Price { get; set; }
 
         public DrinkCommand()
         {
