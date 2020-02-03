@@ -26,7 +26,7 @@ namespace kataCombeSophiene
 
             var sticks = inputCustomer.NbSugars != 0 ? "0" : "";
 
-            return new DrinkCommand(inputCustomer.Type, inputCustomer.NbSugars, sticks);
+            return new DrinkCommand(inputCustomer);
 
         }
 

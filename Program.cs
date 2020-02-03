@@ -8,7 +8,7 @@ namespace kataCombeSophiene
         {
             CoffeeMachine coffeeMachine = new CoffeeMachine();
             MoneyChecker moneyChecker = new MoneyChecker();
-            InputCustomerCommand inputCustomerCommand = new InputCustomerCommand(DrinkType.Tea, 1, 0.3);
+            InputCustomerCommand inputCustomerCommand = new InputCustomerCommand(DrinkType.Tea, 2, 0.6, true);
 
             if (moneyChecker.CheckInputCoin(inputCustomerCommand) < 0)
                 moneyChecker.ShowMissingMoney(inputCustomerCommand);

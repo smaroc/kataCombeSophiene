@@ -9,6 +9,7 @@ namespace kataCombeSophiene
             Tea = 'T',
             Coffee = 'C',
             Chocolate = 'H',
+            OrangeJuice = 'O',
         }
 
 

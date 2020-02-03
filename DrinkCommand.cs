@@ -12,22 +12,25 @@ namespace kataCombeSophiene
 
         public string IsStick { get; }
         public double Price { get; set; }
+        public bool ExtraHot { get; set; }
 
         public DrinkCommand()
         {
 
         }
 
-        public DrinkCommand(DrinkType type, int sugar, string stick)
+        public DrinkCommand(InputCustomerCommand inputCustomerCommand)
         {
-            this.Type = type;
-            this.NbSugars = sugar;
-            this.IsStick = stick;
+            this.Type = inputCustomerCommand.Type;
+            this.NbSugars = inputCustomerCommand.NbSugars;
+            this.IsStick = inputCustomerCommand.IsStick;
+            this.ExtraHot = inputCustomerCommand.ExtraHot;
         }
 
         public override string ToString()
         {
-            return $"{((char)Type).ToString()}:{NbSugars}:{IsStick}";
+            var returnMsg = (ExtraHot == true) ? $"{((char)Type).ToString()}h:{NbSugars}:{IsStick}" : $"{((char)Type).ToString()}:{NbSugars}:{IsStick}";
+            return returnMsg;
         }
     }
 }
