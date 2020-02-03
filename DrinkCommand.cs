@@ -25,6 +25,7 @@ namespace kataCombeSophiene
             this.NbSugars = inputCustomerCommand.NbSugars;
             this.IsStick = inputCustomerCommand.IsStick;
             this.ExtraHot = inputCustomerCommand.ExtraHot;
+            this.Price = inputCustomerCommand.Price;
         }
 
         public override string ToString()
