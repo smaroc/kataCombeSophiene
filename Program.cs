@@ -7,7 +7,8 @@ namespace kataCombeSophiene
         static void Main(string[] args)
         {
             CoffeeMachine  coffeeMachine = new CoffeeMachine();
-            coffeeMachine.TranslateCommand("Drink maker makes 1 tea with 1 sugar and a stick");
+            InputCustomerCommand inputCustomerCommand = new InputCustomerCommand(DrinkType.Tea, 1);
+            coffeeMachine.TranslateCommand(inputCustomerCommand);
             Console.ReadLine();
         }
     }

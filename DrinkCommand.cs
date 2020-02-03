@@ -6,13 +6,18 @@ namespace kataCombeSophiene
 {
     public class DrinkCommand
     {
-        public string Type { get; }
+        public DrinkType Type { get; set; }
 
-        public string NbSugars { get; }
+        public int NbSugars { get; set; }
 
         public string IsStick { get; }
 
-        public DrinkCommand(string type, string sugar, string stick)
+        public DrinkCommand()
+        {
+
+        }
+
+        public DrinkCommand(DrinkType type, int sugar, string stick)
         {
             this.Type = type;
             this.NbSugars = sugar;
@@ -21,7 +26,7 @@ namespace kataCombeSophiene
 
         public override string ToString()
         {
-            return $"{Type}:{NbSugars}:{IsStick}";
+            return $"{((char)Type).ToString()}:{NbSugars}:{IsStick}";
         }
     }
 }
